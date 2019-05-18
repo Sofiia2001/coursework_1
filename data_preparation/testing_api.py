@@ -7,6 +7,15 @@ import sqlite3
 
 
 def getting_data(consumer_token, consumer_secret, access_token, access_token_secret):
+    '''
+    Gets tweets with suicide hashtag using Twitter API
+
+    :param consumer_token: str
+    :param consumer_secret: str
+    :param access_token: str
+    :param access_token_secret: str
+    :return: data from tweets
+    '''
     auth = tweepy.OAuthHandler(hidden_keys['CONSUMER_TOKEN'], hidden_keys['CONSUMER_SECRET'])
     auth.set_access_token(hidden_keys['ACCESS_TOKEN'], hidden_keys['ACCESS_TOKEN_SECRET'])
 
@@ -18,6 +27,13 @@ def getting_data(consumer_token, consumer_secret, access_token, access_token_sec
 
 
 def forming_json(data):
+    '''
+    Formes a dictionary with usernames, tweets, creation dates and locations
+     to work with it later on
+
+    :param data: data from tweets
+    :return: dict
+    '''
     text_list = []
     text = ''
     dict_json = {'screen_names': [], 'posts': [], 'creations': [], 'locations': []} #dictionary to write into json file
@@ -30,13 +46,8 @@ def forming_json(data):
             dict_json['creations'].append(str(post.created_at))
             text += f'screen_name: {post.user.screen_name}'
             text += f'\ntext: {post.text}'
+
             text += f'\ncreated_at: {post.created_at}'
-            # dict_json['post {}'.format(data.index(post))] = {} #creates another sub-dict for every post
-            # dict_json['post {}'.format(data.index(post))]['screen_name'] = post.user.screen_name
-            # dict_json['post {}'.format(data.index(post))]['tweet_text'] = post.text
-            # dict_json['post {}'.format(data.index(post))]['created_at'] = str(post.created_at)
-
-
             # Checks if there is a Tweet's location
             # If yes, prints country and a name of this place
             # In case of missing a place of a Tweet, it prints the location of a user
@@ -44,15 +55,10 @@ def forming_json(data):
                 dict_json['locations'].append(post.place.country + post.place.full_name)
                 text += f'\ncountry: {post.place.country}'
                 text += f'\nfull_name: {post.place.full_name}'
-                # dict_json['post {}'.format(data.index(post))]['country_tweet'] = post.place.country
-                # dict_json['post {}'.format(data.index(post))]['full_place_name'] = post.place.full_name
             else:
-                # dict_json['post {}'.format(data.index(post))]['country_tweet'] = 'null'
-                # dict_json['post {}'.format(data.index(post))]['full_place_name'] = 'null'
                 if post.user.location:
                     dict_json['locations'].append(post.user.location)
                     text += f'\nlocation: {post.user.location}'
-                    # dict_json['post {}'.format(data.index(post))]['user_location'] = post.user.location
                 else:
                     dict_json['locations'].append('No location is presented')
                     # dict_json['post {}'.format(data.index(post))]['user_location'] = 'null'
@@ -60,16 +66,27 @@ def forming_json(data):
             text_list.append(text)
             text = ''
 
-    # return text_list
     return dict_json
 
 
 def write_into_json(dict_json):
+    '''
+    Writes a dictionary into .json file
+
+    :param dict_json: dict
+    :return:
+    '''
     with open('testing_api.json', 'w', encoding = 'utf-8') as file:
         json.dump(dict_json, file, ensure_ascii = False)
 
 
 def write_into_csv(dict_json):
+    '''
+    Writes dictionary into .csv file
+
+    :param dict_json: dict
+    :return:
+    '''
     with open('testing_api.csv', mode='w') as csv_file:
 
         fieldnames = ['screen_name', 'tweet_text', 'created_at',
@@ -82,6 +99,15 @@ def write_into_csv(dict_json):
 
 
 def writing_into_db(consumer_token, consumer_secret, access_token, access_token_secret):
+    '''
+    Creates a database using information about tweets and users who posted them
+
+    :param consumer_token: str
+    :param consumer_secret: str
+    :param access_token: str
+    :param access_token_secret: str
+    :return:
+    '''
     text = []
 
     while True:
@@ -95,10 +121,6 @@ def writing_into_db(consumer_token, consumer_secret, access_token, access_token_
             if post not in text:
                 connection = sqlite3.connect('Twitter_data.db')
                 cursor = connection.cursor()
-        #         with open('testing_api.txt', 'a+') as txt_file:
-        #             if post not in txt_file.read():
-        #                 txt_file.write(post + '\n' + '\n')
-
 
                 write = """INSERT INTO TWITTER (screen_name, post, created_at, location)
                         VALUES (?, ?, ?, ?)"""
@@ -117,7 +139,17 @@ def writing_into_db(consumer_token, consumer_secret, access_token, access_token_
 
         time.sleep(60)
 
+
 def writing_into_txt(consumer_token, consumer_secret, access_token, access_token_secret):
+    '''
+    Writes dictionary into .txt file
+
+    :param consumer_token: str
+    :param consumer_secret: str
+    :param access_token: str
+    :param access_token_secret: str
+    :return:
+    '''
     text = []
     while True:
 
@@ -135,6 +167,7 @@ def writing_into_txt(consumer_token, consumer_secret, access_token, access_token
                 print('Waiting for data to reload')
 
         time.sleep(60)
+
 
 if __name__ == '__main__':
     hidden_keys = credentials()

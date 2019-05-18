@@ -4,12 +4,24 @@ import sqlite3
 
 
 def get_html(url):
+    '''
+    Gets html code of a web page
+
+    :param url: link to a web page
+    :return: html text
+    '''
     to_refactor = requests.get(url)
 
     return to_refactor.text
 
 
 def get_countries(html):
+    '''
+    Gets countries names from html code of a web page
+
+    :param html: str html code
+    :return: dict
+    '''
     soup = BeautifulSoup(html, 'html.parser')
     td_tags = soup.find('table', class_='table-striped').find_all('td')
 
@@ -20,6 +32,12 @@ def get_countries(html):
 
 
 def write_into_database(data):
+    '''
+    Writes parsed table from a web page into a database
+
+    :param data: dict
+    :return:
+    '''
     connection = sqlite3.connect('Official_data.db')
     cursor = connection.cursor()
 

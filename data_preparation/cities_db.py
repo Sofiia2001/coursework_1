@@ -38,6 +38,3 @@ def write_into_country_db():
 
         connection.commit()
     connection.close()
-
-# write_into_country_db()
-

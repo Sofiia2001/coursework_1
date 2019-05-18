@@ -6,6 +6,11 @@ dir_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
 
 def get_countries_correlation():
+    '''
+    Gets needed data from databases to get coefficients of correlation for each country
+
+    :return: (dict, dict)
+    '''
     with sqlite3.connect(f'{dir_path}/data/Official_data.db') as connection:
         cursor = connection.cursor()
 
@@ -30,8 +35,3 @@ def get_countries_correlation():
                               for i in range(len(res_country) - 1)}
 
         return real_results_dict, tweet_results_dict
-
-
-# if __name__ == '__main__':
-#     print(get_countries_correlation()[0])
-#     print(get_countries_correlation()[1])

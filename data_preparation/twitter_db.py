@@ -2,6 +2,12 @@ import sqlite3
 
 
 def writing_into_data_base(data):
+    '''
+    Writes gathered data into database
+
+    :param data: dict
+    :return:
+    '''
     connection = sqlite3.connect('Twitter_data.db')
     cursor = connection.cursor()
 
@@ -27,6 +33,11 @@ def writing_into_data_base(data):
 
 
 def reading_from_file():
+    '''
+    Reads tweets from .txt file and returns a dictionary
+
+    :return: dict
+    '''
     with open('testing_api.txt') as tw_api:
         lines = tw_api.readlines()
         dct = {'screen_names': [], 'posts': [], 'creations': [], 'locations': []}

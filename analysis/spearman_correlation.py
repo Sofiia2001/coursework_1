@@ -86,8 +86,3 @@ def count_spearman_correlation():
     spearman_correlation = round(1 - (6 * d_power) / (n * (n * n - 1)), 3)
 
     return spearman_correlation
-
-
-# if __name__ == '__main__':
-#     print(count_spearman_correlation())
-    # get_relevant_from_official_database()

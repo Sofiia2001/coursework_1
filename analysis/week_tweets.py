@@ -172,23 +172,3 @@ class WeekTweets:
         data = self.tweets_by_countries_on_day()
         with open('daily_reports.json', 'w+', encoding='utf-8') as file:
             json.dump(data, file, ensure_ascii=False)
-
-
-if __name__ == '__main__':
-    week = WeekTweets()
-    # week.write_daily_report_json()
-    # data = self.tweets_by_countries_on_day()
-    # data = {'Monday': {'Netherlands': 10, None: 600, 'India': 144, 'United Kingdom': 153, 'United States': 435, 'France': 60,
-    #  'Australia': 76, 'Canada': 71, 'Jamaica': 7, 'Belgium': 4, 'Colombia': 1, 'Philippines': 5, 'Puerto Rico': 3,
-    #  'New Zealand': 3, 'Belize': 1, 'Saudi Arabia': 1, 'Uruguay': 1, 'South Africa': 6, 'Ireland': 4, 'Seychelles': 6,
-    #  'Antarctica': 3, 'Brazil': 5, 'Bonaire': 2, 'Trinidad and Tobago': 1, 'Zimbabwe': 2, 'Somalia': 3, 'Nigeria': 6,
-    #  'Indonesia': 3, 'Taiwan': 1, 'Tanzania': 4, 'Peru': 1, 'Argentina': 3, 'Paraguay': 1, 'Costa Rica': 1,
-    #  'Antigua and Barbuda': 1, 'Bangladesh': 1, 'Pakistan': 6, 'Georgia': 3, 'Kenya': 3, 'Sri Lanka': 2, 'China': 2,
-    #  'Portugal': 1, 'Afghanistan': 1, 'Guatemala': 1, 'Qatar': 1, 'United Arab Emirates': 8, 'North Korea': 2,
-    #  'Madagascar': 1, 'Romania': 1, 'Switzerland': 1, 'Germany': 6, 'Papua New Guinea': 1, 'Cayman Islands': 3,
-    #  'Ethiopia': 1, 'Ecuador': 1, 'Mauritania': 2, 'Ghana': 2, 'Norfolk Island': 1, 'Kuwait': 2, 'Bahamas': 1,
-    #  'Cameroon': 1, 'Thailand': 2, 'Spain': 3, 'Turkey': 1, 'Japan': 1, 'Italy': 2, 'Lebanon': 2,
-    #  'Heard Island and McDonald Islands': 1, 'Greece': 1, 'Senegal': 1, 'Russia': 1, 'Iran': 1, 'Réunion': 3,
-    #  'Bolivia': 1, 'Austria': 1, 'U.S. Virgin Islands': 3, 'Haiti': 1}}
-    # with open('daily_reports.json', 'w+', encoding='utf-8') as file:
-    #     json.dump(data, file, ensure_ascii=False)

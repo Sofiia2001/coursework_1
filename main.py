@@ -16,10 +16,21 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 
 
 def data_from_json():
+    '''
+    Calls a function that reads .json file with information
+    about number of tweets in various countries
+
+    :return: dict
+    '''
     return spearman_correlation.read_json_tweets_amount()
 
 
 def get_countries():
+    '''
+    Reads a file with all existing countries in the world
+
+    :return: list
+    '''
     to_return = []
     with open(f'{dir_path}/data/countries.txt') as file:
         lines = file.readlines()
@@ -30,6 +41,11 @@ def get_countries():
 
 
 def x_and_y():
+    '''
+    Formes data for x asis and y asis to create a graphic
+
+    :return: (list, list)
+    '''
     data_json = data_from_json()
     countries = get_countries()
     x = []
@@ -42,9 +58,12 @@ def x_and_y():
     return x, y
 
 
-x_and_y = x_and_y()
-
 def main_posts():
+    '''
+    Returns a graphic ot draw
+
+    :return: dash html
+    '''
     return html.Div(
         [
             dcc.Graph(
@@ -62,24 +81,40 @@ def main_posts():
     )
 
 
-
 def day():
+    '''
+    Gets a day of a week when there were the majority of tweets posted
+
+    :return: str
+    '''
     week = WeekTweets()
     day = week.maximum_tweets_day()
     return day
 
 
 def spearman():
+    '''
+    Calls a function from another module that counts a Spearman correlation coefficient
+
+    :return: float
+    '''
     return count_spearman_correlation()
 
 
 def read_json():
+    '''
+    Reads .json file with daily reports about tweets in different countries
+
+    :return: dict
+    '''
     with open(f'{dir_path}/data/daily_reports.json') as file:
         data = json.load(file)
     return data
 
 
 data = read_json()
+
+x_and_y = x_and_y()
 
 weekdays = {
     'mon': 'Monday',
@@ -156,7 +191,7 @@ app.layout = html.Div([
 
         html.P(
             dcc.Markdown('The main goal of this investigation was to determine if suicidal posts'
-                         'and real suicide rates somehow depends on each other.')
+                         ' and real suicide rates somehow depends on each other.')
         ),
 
         html.P(
@@ -171,7 +206,7 @@ app.layout = html.Div([
             dcc.Markdown(f'Calculated Spearman correlation coefficient is **{spearman()}**')
         )
     ],
-        style={'marginBottom': 250, 'marginTop': 100, 'textAlign': 'center'}),
+        style={'marginBottom': 250, 'marginTop': 100}),
 
 ])
 
@@ -206,7 +241,9 @@ def update_figure(day_week_name):
 
     return {'data': [traces]}
 
+
 server = app.server
+
 
 if __name__ == '__main__':
     app.run_server(debug=False)
