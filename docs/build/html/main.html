@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>main module &#8212; TWIDAN 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="countries_correlation module" href="countries_correlation.html" />
+    <link rel="prev" title="TWIDAN" href="modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-main">
+<span id="main-module"></span><h1>main module<a class="headerlink" href="#module-main" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="main.data_from_json">
+<code class="descclassname">main.</code><code class="descname">data_from_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.data_from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls a function that reads .json file with information
+about number of tweets in various countries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="main.day">
+<code class="descclassname">main.</code><code class="descname">day</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a day of a week when there were the majority of tweets posted</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="main.get_countries">
+<code class="descclassname">main.</code><code class="descname">get_countries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.get_countries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads a file with all existing countries in the world</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="main.main_posts">
+<code class="descclassname">main.</code><code class="descname">main_posts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.main_posts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a graphic ot draw</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dash html</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="main.read_json">
+<code class="descclassname">main.</code><code class="descname">read_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.read_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads .json file with daily reports about tweets in different countries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="main.spearman">
+<code class="descclassname">main.</code><code class="descname">spearman</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.spearman" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls a function from another module that counts a Spearman correlation coefficient</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="main.update_figure">
+<code class="descclassname">main.</code><code class="descname">update_figure</code><span class="sig-paren">(</span><em>day_week_name</em><span class="sig-paren">)</span><a class="headerlink" href="#main.update_figure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="main.update_graph">
+<code class="descclassname">main.</code><code class="descname">update_graph</code><span class="sig-paren">(</span><em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#main.update_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TWIDAN</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">TWIDAN</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="countries_correlation.html">countries_correlation module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">TWIDAN</a><ul>
+      <li>Previous: <a href="modules.html" title="previous chapter">TWIDAN</a></li>
+      <li>Next: <a href="countries_correlation.html" title="next chapter">countries_correlation module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Sofiia Tatosh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/main.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>ADT_Tweets module &#8212; TWIDAN 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="beautifulsoup_parsing module" href="beautifulsoup_parsing.html" />
+    <link rel="prev" title="week_tweets module" href="week_tweets.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-data_preparation.ADT_Tweets">
+<span id="adt-tweets-module"></span><h1>ADT_Tweets module<a class="headerlink" href="#module-data_preparation.ADT_Tweets" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="data_preparation.ADT_Tweets.TweetsByCountries">
+<em class="property">class </em><code class="descclassname">data_preparation.ADT_Tweets.</code><code class="descname">TweetsByCountries</code><span class="sig-paren">(</span><em>data_base</em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation.ADT_Tweets.TweetsByCountries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Abstract data type that gives an opportunity
+to make actions with data from twitter posts</p>
+<dl class="method">
+<dt id="data_preparation.ADT_Tweets.TweetsByCountries.clean_locations">
+<code class="descname">clean_locations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation.ADT_Tweets.TweetsByCountries.clean_locations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Additional method to clean locations, that means to make locations
+more readable and make them fitting the library</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list with cleared locations</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="data_preparation.ADT_Tweets.TweetsByCountries.get_amount_in_country">
+<code class="descname">get_amount_in_country</code><span class="sig-paren">(</span><em>country</em><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation.ADT_Tweets.TweetsByCountries.get_amount_in_country" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns amount of suicidal tweets  in a given country if
+this country exists in dictionary data storage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>country</strong> – name of a country in a string form</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int, the amount of posts in a given country</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="data_preparation.ADT_Tweets.TweetsByCountries.tweets_amount_db">
+<code class="descname">tweets_amount_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation.ADT_Tweets.TweetsByCountries.tweets_amount_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method that uses both database with all the cities in various countries
+and makes requests on geonames to later count suicidal post on Twitter
+dividing the amount on location by countries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of a look {‘country’: num_of_tweets}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="data_preparation.ADT_Tweets.TweetsByCountries.tweets_amount_geonames">
+<code class="descname">tweets_amount_geonames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation.ADT_Tweets.TweetsByCountries.tweets_amount_geonames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to get amount of tweets in certain countries using geonames</p>
+<p>Unfortunately, works with a limited amount of requests, so be careful
+using it in your code.
+It has approximately 1000 requests available in one hour</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary of a look {‘country’: num_of_tweets}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="data_preparation.ADT_Tweets.TweetsByCountries.write_into_file">
+<code class="descname">write_into_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation.ADT_Tweets.TweetsByCountries.write_into_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes data into a json file to store it because
+of a limitation of requests</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="data_preparation.ADT_Tweets.initial_file">
+<code class="descclassname">data_preparation.ADT_Tweets.</code><code class="descname">initial_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_preparation.ADT_Tweets.initial_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method to create initial file view</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TWIDAN</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">TWIDAN</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="countries_correlation.html">countries_correlation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spearman_correlation.html">spearman_correlation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week_tweets.html">week_tweets module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ADT_Tweets module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="beautifulsoup_parsing.html">beautifulsoup_parsing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cities_db.html">cities_db module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twitter_db.html">twitter_db module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">TWIDAN</a><ul>
+      <li>Previous: <a href="week_tweets.html" title="previous chapter">week_tweets module</a></li>
+      <li>Next: <a href="beautifulsoup_parsing.html" title="next chapter">beautifulsoup_parsing module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Sofiia Tatosh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/ADT_Tweets.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>week_tweets module &#8212; TWIDAN 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="spearman_correlation module" href="spearman_correlation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-analysis.week_tweets">
+<span id="week-tweets-module"></span><h1>week_tweets module<a class="headerlink" href="#module-analysis.week_tweets" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="analysis.week_tweets.WeekTweets">
+<em class="property">class </em><code class="descclassname">analysis.week_tweets.</code><code class="descname">WeekTweets</code><span class="sig-paren">(</span><em>date=''</em><span class="sig-paren">)</span><a class="headerlink" href="#analysis.week_tweets.WeekTweets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="analysis.week_tweets.WeekTweets.find_week_day">
+<code class="descname">find_week_day</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#analysis.week_tweets.WeekTweets.find_week_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds week day when the biggest number of tweets was posted</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>max week day of a week</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="analysis.week_tweets.WeekTweets.maximum_tweets_day">
+<code class="descname">maximum_tweets_day</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#analysis.week_tweets.WeekTweets.maximum_tweets_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a day when there was the majority of suicide tweets posted</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="analysis.week_tweets.WeekTweets.select_week">
+<code class="descname">select_week</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#analysis.week_tweets.WeekTweets.select_week" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a week due to a correct calendar</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="analysis.week_tweets.WeekTweets.tweets_by_countries_on_day">
+<code class="descname">tweets_by_countries_on_day</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#analysis.week_tweets.WeekTweets.tweets_by_countries_on_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns number of tweets on a certain day from different countries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>amount of tweets on mondays(eg)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="analysis.week_tweets.WeekTweets.tweets_for_week">
+<code class="descname">tweets_for_week</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#analysis.week_tweets.WeekTweets.tweets_for_week" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects all the tweets from a gathered database in weekdays formed before</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary with date: tweets made in that day</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="analysis.week_tweets.WeekTweets.write_daily_report_json">
+<code class="descname">write_daily_report_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#analysis.week_tweets.WeekTweets.write_daily_report_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write into json</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TWIDAN</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">TWIDAN</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="countries_correlation.html">countries_correlation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spearman_correlation.html">spearman_correlation module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">week_tweets module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">TWIDAN</a><ul>
+      <li>Previous: <a href="spearman_correlation.html" title="previous chapter">spearman_correlation module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Sofiia Tatosh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/week_tweets.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
