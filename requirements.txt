@@ -64,3 +64,4 @@ wadllib==1.3.2
 Werkzeug==0.15.2
 yarg==0.1.9
 zope.interface==4.3.2
+gunicorn==19.9.0
